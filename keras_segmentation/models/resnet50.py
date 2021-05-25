@@ -141,7 +141,7 @@ def get_resnet50_encoder(input_height=224,  input_width=224,
 
     x = ZeroPadding2D((3, 3), data_format=IMAGE_ORDERING)(img_input)
     x = Conv2D(64, (7, 7), data_format=IMAGE_ORDERING,
-               strides=(2, 2), name='conv1')(x)
+               strides=(1, 1), name='conv1')(x)
     f1 = x
 
     x = BatchNormalization(axis=bn_axis, name='bn_conv1')(x)
